@@ -2,14 +2,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <div class="header">
     <ion-img src="../assets/icon/i.svg" alt="CHATSUicon" class="icon"></ion-img>
   </div>
+  <ion-text>
+    <h1>¡CUENTA CREADA CON ÉXITO!</h1>
+  </ion-text>
 
   <ion-text>
-
+    <p id="smalltext">Ahora puedes iniciar sesión con tu nueva cuenta</p>
   </ion-text>
-</ion-content>
+  <div id="center">
+    <ion-button shape="round" id="textBtn"[routerLink]="['/registro']">Iniciar Sesión</ion-button>
+  </div>
+   
+  </ion-content>
