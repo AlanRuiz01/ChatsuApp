@@ -32,20 +32,21 @@ h1{
    flex-direction: column;
    align-items: center;
 }
-.enters{
+.inputs{
     width: 308px;
     border: 1px solid #6778C5;
     border-radius: 8px;
  
 }
-.but{
+.butRegister{
+    --background: #6778C5;
     width: 308px;
     margin-top: 60px;
     color: #FFFFFF;
     font-size: 24px;
 }
 
-.butC{
+.butCenter{
     text-align: center;
 }
 .backButton{
@@ -54,5 +55,5 @@ h1{
 }
 .CustomBackBut{
     color: #FFFFFF;
- 
+    
 }

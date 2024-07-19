@@ -55,14 +55,15 @@ h1{
  
 }
 
-.but{
+.butL{
+    --background: #6778C5;
     width: 308px;
     margin-top: 20px;
     color: #FFFFFF;
     font-size: 24px;
     
 }
-.butC, .primeraV{
+.butLogin, .primeraV{
     text-align: center;
 }
 
@@ -72,9 +73,11 @@ h1{
     margin-bottom: 2px;
     color: #6778C5;
 }
-#Bv{
+#registerBut{
     border-radius: 25px;
     color: #6778C5;
     font-size: 14px;
- 
+    --background: #FFFFFF; 
+    border: 1px solid #6778C5; 
+    width: 198px;
 }
