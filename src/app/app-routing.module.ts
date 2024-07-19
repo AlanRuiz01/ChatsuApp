@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'cuenta-creada',
     loadChildren: () => import('./pages/cuenta-creada/cuenta-creada.module').then( m => m.CuentaCreadaPageModule)
+  },
+  {
+    path: 'chat-room',
+    loadChildren: () => import('./pages/chat-room/chat-room.module').then( m => m.ChatRoomPageModule)
   }
 ];
 
