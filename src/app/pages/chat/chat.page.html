@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat Room</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let msg of messages">
+      {{ msg }}
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-input [(ngModel)]="message" placeholder="Type a message..."></ion-input>
+      <ion-button (click)="sendMessage()">Send</ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'chat-room',
     loadChildren: () => import('./pages/chat-room/chat-room.module').then( m => m.ChatRoomPageModule)
+  },  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
   }
+
 ];
 
 @NgModule({
