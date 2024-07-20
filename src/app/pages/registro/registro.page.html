@@ -10,30 +10,30 @@
     </ion-buttons>  
   </ion-toolbar>
   </ion-header>
-      <div class="header">
-          <ion-img src="../assets/icon/i.svg" alt="CHATSUicon" class="icon"></ion-img>
+
+  <div class="header">
+      <ion-img src="../assets/icon/i.svg" alt="CHATSUicon" class="icon"></ion-img>
+  </div>
+
+  <ion-text>
+    <h1>CREACIÓN DE CUENTA</h1>
+  </ion-text>
+  
+  <ion-text class="butCenter" color="danger" *ngIf="errorMessage">
+    <div>{{ errorMessage }}</div>
+  </ion-text>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="register">
+      <h3>Usuario:</h3>
+      <ion-input class='inputs' fill="clear" formControlName="username" type="text"></ion-input>
+      <h3>Email:</h3>
+      <ion-input class='inputs' fill="clear" formControlName="email" type="email"></ion-input>
+      <h3>Contraseña:</h3>
+      <ion-input class='inputs' fill="clear" formControlName="password" type="password"></ion-input>
+      <div class="butCenter">
+        <ion-button class="butRegister" fill="clear" expand="full" type="submit">Registrar</ion-button>
       </div>
-
-      <ion-text>
-        <h1>CREACIÓN DE CUENTA</h1>
-      </ion-text>
-
-      <div class="register">
-        <ion-text>
-          <h3>Usuario:</h3>
-          <ion-input class="inputs" type="text" fill="outline"></ion-input>
-
-          <h3>Email:</h3>
-            <ion-input class="inputs" type="email" fill="outline"></ion-input>
-         
-          <h3>Contraseña:</h3>
-          <ion-input class="inputs" type="password" fill="outline"></ion-input>
-
-          <h3>Confirmar Contraseña:</h3>
-          <ion-input class="inputs" type="password" fill="outline"></ion-input>
-        </ion-text>
     </div>
-    <div class="butCenter">
-      <ion-button class="butRegister" [routerLink]="['/cuenta-creada']">Registrar</ion-button>
-    </div>
+  </form>
+    
 </ion-content>
