@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.items{
+.headerItems{
     margin-left: 10px;
 }
 
@@ -15,6 +15,42 @@ h1{
     font-family: "League Spartan", sans-serif;
     color: #FFFFFF;
 }
-p{
-    color: #6778C5;
+#name{
+    font-family: "Sora", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
+#des{
+    color: #6778C5;
+    font-family: "Sora", sans-serif;
+    font-size: 1rem;
+   
+}
+
+.custom-thumbnail {
+    width: 101px; /* Ajusta el tamaño del thumbnail */
+    height: 101px; /* Ajusta el tamaño del thumbnail */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+  }
+  
+  #icons {
+    width: 100%; /* Ocupa todo el ancho del thumbnail */
+    height: 100%; /* Ocupa toda la altura del thumbnail */
+    object-fit: contain; /* Ajusta el SVG para que se ajuste al contenedor sin distorsionar */
+  }
+ 
+.listClass{
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px 10px;
+    
+}
+
+ion-item {
+    --border-radius: 25px; /* Ajusta el radio de los bordes de los ítems si es necesario */
+    margin-top: 10px;
+  }

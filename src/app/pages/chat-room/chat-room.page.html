@@ -9,69 +9,21 @@
 
 <ion-content [fullscreen]="true">
   <div class="header">
-    <ion-img src="../assets/icon/logOut.svg" alt="LogOutIcon" class="items" [routerLink]="['/inicio']" ></ion-img>
-    <ion-img src="../assets/icon/contact.svg" alt="Contact" class="items"></ion-img>
-    <h1 class="items">SALAS</h1>
+    <ion-img src="../assets/icon/logOut.svg" alt="LogOutIcon" class="headerItems" [routerLink]="['/inicio']" ></ion-img>
+    <ion-img src="../assets/icon/contact.svg" alt="Contact" class="headerItems"></ion-img>
+    <h1 class="headerItems">SALAS</h1>
   </div>
 
-  <ion-list lines="none">
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-icon style="width: 100%; height: 100%" src="../assets/icon/videogames.svg"></ion-icon>
+  <ion-list lines = "none" class="listClass">
+    <ion-item *ngFor="let group of Groups" color="light">
+      <ion-thumbnail slot="start" class="custom-thumbnail">
+        <img [src]="group.icon" id="icons" />
       </ion-thumbnail>
       <ion-label>
         <ion-text color="dark">
-        <h3>Videojuegos</h3>
-        </ion-text>
-        <p>Entérate de lanzamientos de videjuegos, conoce gente geek, habla sobre tus juegos favoritos.</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-icon style="width: 100%; height: 100%" src="../assets/icon/anime.svg"></ion-icon>
-      </ion-thumbnail>
-      <ion-label>
-        <ion-text color="dark">
-        <h3>Anime</h3>
+        <h2 id="name">{{ group.name }}</h2>
       </ion-text>
-        <p>Debate los mejores animes de la temporada, descubre animes que no habías visto con la comunidad.</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-icon style="width: 100%; height: 100%" src="../assets/icon/Counter.svg"></ion-icon>
-      </ion-thumbnail>
-      <ion-label>
-        <ion-text color="dark">
-          <h3>Source Following</h3>
-        </ion-text>
-        <p>Una comunidad enteramente de fans de Valve, juega a títulos de la desarrolladora con nuevos amigos.</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-icon style="width: 100%; height: 100%" src="../assets/icon/music.svg"></ion-icon>
-      </ion-thumbnail>
-      <ion-label>
-        <ion-text color="dark">
-          <h3>Música</h3>
-        </ion-text>
-        <p>Charla de la carrera de tus artistas favoritos, descubre nuevos géneros musicales, artistas y grupos.</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-icon style="width: 100%; height: 100%" src="../assets/icon/cine.svg"></ion-icon>
-      </ion-thumbnail>
-      <ion-label>
-        <ion-text color="dark">
-          <h3>Cine</h3>
-        </ion-text>
-        <p>Habla sobre cine y directores de película, asiste de la nueva cartelera con los miembros de la comunidad.</p>
+        <p id="des">{{ group.description }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
