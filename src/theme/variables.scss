@@ -1,2 +1,25 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+/* Set the color on all ion-button elements */
+ 
+.native-input.sc-ion-input-md{
+    // padding-left: 10px;
+} 
+
+.input-fill-outline.sc-ion-input-md-h{
+    min-height: 44px;
+    --border-color: #6778C5;
+    --border-radius: 8px;
+    --border-color-hover:var(--border-color)
+}
+
+.ion-valid.sc-ion-input-md-h {
+    --highlight-color: #6778C5;
+}
+.sc-ion-input-md-h {
+    --border-width: 1.2px;
+    --highlight-height: 2px;
+    font-size: inherit;
+    --highlight-color-focused: #6778C5;
+    --highligh-color-hover:#6778C5;
+}

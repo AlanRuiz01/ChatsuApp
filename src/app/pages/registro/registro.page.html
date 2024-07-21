@@ -25,13 +25,13 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="register">
       <h3>Usuario:</h3>
-      <ion-input class='inputs' fill="clear" formControlName="username" type="text"></ion-input>
+      <ion-input class='inputs' fill="outline" formControlName="username" type="text" ></ion-input>
       <h3>Email:</h3>
-      <ion-input class='inputs' fill="clear" formControlName="email" type="email"></ion-input>
+      <ion-input class='inputs' fill="outline" formControlName="email" type="email"></ion-input>
       <h3>Contraseña:</h3>
-      <ion-input class='inputs' fill="clear" formControlName="password" type="password"></ion-input>
+      <ion-input class='inputs' fill="outline" formControlName="password" type="password"></ion-input>
       <div class="butCenter">
-        <ion-button class="butRegister" fill="clear" expand="full" type="submit">Registrar</ion-button>
+        <ion-button class="butRegister"  expand="full" type="submit">Registrar</ion-button>
       </div>
     </div>
   </form>
