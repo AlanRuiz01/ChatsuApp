@@ -1,19 +1,25 @@
 .header{
     background-color: #6778C5;
     width: auto;
-    height: 14%;
+    height: 17%;
     display: flex;
     justify-content: start;
     align-items: center;
 }
 
-.headerItems{
-    margin-left: 10px;
+.headerItem{
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 2px solid #FFFFFF;
 }
-
-
-
-
+ h1{
+    font-family: "League Spartan", sans-serif;
+    color: #FFFFFF;
+    margin-left: 10px;
+ }
+ 
 .inputMessage{
     display: flex;
     align-items: center;
@@ -26,7 +32,6 @@
 }
 
  #CustomToolbar{
- 
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;

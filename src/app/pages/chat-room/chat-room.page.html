@@ -17,7 +17,7 @@
   <ion-list lines = "none" class="listClass">
     <ion-item *ngFor="let group of Groups" color="light">
       <ion-thumbnail slot="start" class="custom-thumbnail">
-        <img [src]="group.icon" id="icons" [routerLink]="['/chat']"/>
+        <img [src]="group.icon" id="icons" (click)="goToChat(group)"/>
       </ion-thumbnail>
       <ion-label>
         <ion-text color="dark">

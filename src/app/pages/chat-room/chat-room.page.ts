@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-chat-room',
   templateUrl: './chat-room.page.html',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ChatRoomPage  {
 
-  constructor(private authService: AuthService, private router: Router ) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   async onLogout() {
     await this.authService.logout();
@@ -42,5 +44,9 @@ export class ChatRoomPage  {
       icon: "assets/icon/cine.svg"
     }
   ];
+
+  goToChat(group: any) {
+    this.router.navigate(['/chat'], { queryParams: { group: JSON.stringify(group) } });
+  }
 
 }
