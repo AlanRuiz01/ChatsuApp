@@ -37,7 +37,7 @@ export class InicioPage {
   private translateError(errorMessage: string): string {
     switch (errorMessage) {
         case 'Invalid login credentials':
-          return 'Credenciales de inicio de sesión inválidas , por favor verifique los campos';
+          return 'Credenciales de inicio de sesión inválidas, Por favor verifique los campos';
       default:
         return 'Datos incorrectos, Por favor verifique los campos';
     }
