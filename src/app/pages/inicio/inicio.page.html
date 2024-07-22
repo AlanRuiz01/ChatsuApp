@@ -19,7 +19,7 @@
       <h1>INICIO DE SESIÓN</h1>
     </ion-text>
       
-    <div class="login">
+    <!-- <div class="login">
         <ion-text>
           <h3>Email:</h3>
             <ion-input class="input" type="email" fill="outline"></ion-input>
@@ -30,12 +30,30 @@
 
     <div class="butLogin">
       <ion-button class="butL" [routerLink]="['/chat-room']">Ingresar</ion-button>
-    </div>
+    </div> -->
+    
+    <ion-text class="butCenter" color="danger" *ngIf="errorMessage">
+      <div>{{ errorMessage }}</div>
+    </ion-text>
+
+    
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h3>Email:</h3>
+      <ion-input  fill="outline" formControlName="email" type="email"></ion-input>
+      <h3>Contraseña:</h3>
+      <ion-input  fill="outline" formControlName="password" type="password"></ion-input>
+      <div>
+        <ion-button expand="full" type="submit">Registrar</ion-button>
+      </div>
+    </form>
+
+
 
     <div class="primeraV">
         <h3 id="textPv">¿Primera vez?</h3>
         <ion-button shape="round" id="registerBut" [routerLink]="['/registro']">Regístrate</ion-button>
     </div>
+
   </ion-content>
 </ion-content>
 

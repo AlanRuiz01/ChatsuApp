@@ -21,4 +21,17 @@ export class AuthService {
   });
   return from(promise);
   }
+
+
+  login(email: string, password: string): Observable<AuthResponse> {
+    const promise = this.supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    return from(promise);
+  }
+
+  logout(): void {
+    this.supabase.auth.signOut();
+  }
 }
