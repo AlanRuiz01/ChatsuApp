@@ -37,6 +37,11 @@ export class AuthService {
 
   async getCurrentUser() {
     const { data: { user } } = await this.supabase.auth.getUser();
-    return user;
+    if (user) {
+      // Accede a `username` desde `user_metadata` usando notación de corchetes
+      const username = user.user_metadata?.['username'] || 'Unknown User';
+      return { username };
+    }
+    return { username: 'Unknown User' }; // Valor predeterminado si el usuario no está autenticado
   }
 }

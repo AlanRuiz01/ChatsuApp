@@ -12,8 +12,8 @@ export class SocketService {
     this.socket = io('http://localhost:4000');
   }
 
-  sendMessage(message: string) {
-    this.socket.emit('message', message);
+  sendMessage(message: string , userName: string) {
+    this.socket.emit('message', { message, userName });
   }
 
   getMessage(): Observable<string> {

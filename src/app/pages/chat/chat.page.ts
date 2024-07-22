@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SocketService } from '../../services/socket.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.page.html',
@@ -8,11 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChatPage implements OnInit {
   message: string = "";
-  messages: string[] = [];
+  userName: string = "Default User";
+  messages: any[] = [];
   group: any;
-  constructor(private socketService: SocketService , private route: ActivatedRoute) { }
+  constructor(private socketService: SocketService , private route: ActivatedRoute , private supabaseService: AuthService) { }
 
-  ngOnInit() {
+ async ngOnInit() {
+
+  const userProfile = await this.supabaseService.getCurrentUser();
+  this.userName = userProfile.username;
+
 
     this.socketService.getMessage().subscribe((message: string) => {
       this.messages.push(message);
@@ -26,7 +33,7 @@ export class ChatPage implements OnInit {
     
   }
   sendMessage() {
-    this.socketService.sendMessage(this.message);
+    this.socketService.sendMessage(this.message , this.userName);
     this.message = '';
   }
 }
