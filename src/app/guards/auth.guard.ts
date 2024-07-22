@@ -13,10 +13,13 @@ export class AuthGuard implements CanActivate {
   async canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean | UrlTree> {
-    const user = await this.authService.getCurrentUser();
-    if (user) {
+
+    const userProfile = await this.authService.getCurrentUser();
+    if (userProfile && userProfile.username !== 'Unknown User') {
+      // Usuario autenticado, permite el acceso
       return true;
     } else {
+      // Usuario no autenticado, redirige al inicio
       return this.router.createUrlTree(['/inicio']);
     }
   }
