@@ -31,11 +31,13 @@ h1{
     color: #6778C5;
     font-size: 16px;
 }
-.register{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .inputs{
     width: 308px;
 }
@@ -58,4 +60,8 @@ h1{
 .CustomBackBut{
     color: #FFFFFF;
     
+}
+
+#centerInputs{
+    text-align: start;
 }
