@@ -21,16 +21,24 @@ export class RegistroPage{
   });
 
   errorMessage: string | null = null;
-  public onSubmit(){
+  public onSubmit() {
     const rawForm = this.form.getRawValue();
-    this.authService
-      .register(rawForm.email, rawForm.username, rawForm.password)
+    this.authService.register(rawForm.email, rawForm.username, rawForm.password)
       .subscribe((result) => {
         if (result.error) {
-          this.errorMessage = result.error.message;
+          this.errorMessage = this.translateError(result.error.message);
         } else {
           this.router.navigateByUrl('/cuenta-creada');
         }
       });
+  }
+
+  private translateError(errorMessage: string): string {
+    switch (errorMessage) {
+      case 'User already registered':
+        return 'Usuario ya registrado';
+      default:
+        return 'Datos incorrectos, Por favor verifique los campos';
+    }
   }
 }

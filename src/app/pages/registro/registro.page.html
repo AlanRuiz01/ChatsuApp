@@ -22,13 +22,13 @@
   <ion-text class="butCenter" color="danger" *ngIf="errorMessage">
     <div>{{ errorMessage }}</div>
   </ion-text>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" id="form">
     <div class="register">
-      <h3>Usuario:</h3>
+      <h3 id="centerInputs">Usuario:</h3>
       <ion-input class='inputs' fill="outline" formControlName="username" type="text" ></ion-input>
-      <h3>Email:</h3>
+      <h3 id="centerInputs">Email:</h3>
       <ion-input class='inputs' fill="outline" formControlName="email" type="email"></ion-input>
-      <h3>Contraseña:</h3>
+      <h3 id="centerInputs">Contraseña:</h3>
       <ion-input class='inputs' fill="outline" formControlName="password" type="password"></ion-input>
       <div class="butCenter">
         <ion-button class="butRegister"  expand="full" type="submit">Registrar</ion-button>
