@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-chat-room',
   templateUrl: './chat-room.page.html',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatRoomPage  {
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router ) { }
 
+  async onLogout() {
+    await this.authService.logout();
+    this.router.navigate(['/inicio']); // Navega a la página de login después de cerrar sesión
+  }
+  
   Groups = [
     {
       name: "Videojuegos",

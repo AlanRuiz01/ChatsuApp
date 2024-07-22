@@ -1,0 +1,34 @@
+.header{
+    background-color: #6778C5;
+    width: auto;
+    height: 14%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.headerItems{
+    margin-left: 10px;
+}
+
+
+
+
+.inputMessage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    
+}
+#send{
+    width: 44px;
+}
+
+ #CustomToolbar{
+ 
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+ }
+ 

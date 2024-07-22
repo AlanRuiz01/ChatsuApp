@@ -37,6 +37,8 @@ export class RegistroPage{
     switch (errorMessage) {
       case 'User already registered':
         return 'Usuario ya registrado';
+        case 'Invalid login credentials':
+          return 'Credenciales de inicio de sesión inválidas';
       default:
         return 'Datos incorrectos, Por favor verifique los campos';
     }

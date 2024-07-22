@@ -19,6 +19,7 @@ export class InicioPage {
     email: ['', Validators.required],
     password: ['', Validators.required],
   });
+  
   errorMessage: string | null = null;
   onSubmit(): void {
     const rawForm = this.form.getRawValue();
@@ -26,10 +27,21 @@ export class InicioPage {
       .login(rawForm.email, rawForm.password)
       .subscribe((result) => {
         if (result.error) {
-          this.errorMessage = result.error.message;
+          this.errorMessage = this.translateError(result.error.message);
         } else {
-          this.router.navigateByUrl('/chat');
+          this.router.navigateByUrl('/chat-room');
         }
       });
   }
-}
+  
+  private translateError(errorMessage: string): string {
+    switch (errorMessage) {
+        case 'Invalid login credentials':
+          return 'Credenciales de inicio de sesión inválidas , por favor verifique los campos';
+      default:
+        return 'Datos incorrectos, Por favor verifique los campos';
+    }
+  }
+}  
+
+

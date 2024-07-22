@@ -37,14 +37,16 @@
     </ion-text>
 
     
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="loginForm">
+      <div class="login">
       <h3>Email:</h3>
-      <ion-input  fill="outline" formControlName="email" type="email"></ion-input>
+      <ion-input class='inputs' fill="outline" formControlName="email" type="email"></ion-input>
       <h3>Contraseña:</h3>
-      <ion-input  fill="outline" formControlName="password" type="password"></ion-input>
+      <ion-input class='inputs' fill="outline" formControlName="password" type="password"></ion-input>
       <div>
-        <ion-button expand="full" type="submit">Registrar</ion-button>
+        <ion-button expand="full" type="submit" id="butL">Iniciar Sesión</ion-button>
       </div>
+    </div>
     </form>
 
 

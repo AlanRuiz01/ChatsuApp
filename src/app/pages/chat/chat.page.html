@@ -1,11 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Chat Room</ion-title>
-  </ion-toolbar>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
 </ion-header>
 
 <ion-content>
+  <div class="header">
+    <ion-buttons slot="start"  >
+      <ion-back-button defaultHref="/chat-room" class="CustomBackBut" text=""></ion-back-button>
+    </ion-buttons> 
+    <!-- <ion-img src="../assets/icon/contact.svg" alt="Contact" class="headerItems"></ion-img> -->
+    <h1 class="headerItems">CHATS</h1>
+  </div>
   <ion-list>
+
     <ion-item *ngFor="let msg of messages">
       {{ msg }}
     </ion-item>
@@ -13,10 +24,14 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-item>
-      <ion-input [(ngModel)]="message" placeholder="Type a message..."></ion-input>
-      <ion-button (click)="sendMessage()">Send</ion-button>
+    <div class="inputMessage"> 
+    <ion-toolbar id="CustomToolbar"> 
+    <ion-item id="customItem" fill="outline" shape="round"  >
+      <ion-input  [(ngModel)]="message" placeholder="Type a message..."></ion-input>
+ <!-- !     <ion-button (click)="sendMessage()">Send</ion-button> -->
     </ion-item>
-  </ion-toolbar>
+    </ion-toolbar>
+    <ion-img src="../assets/icon/send.svg" alt="LogOutIcon" (click)="sendMessage()" id="send"></ion-img>
+    </div>
+  
 </ion-footer>

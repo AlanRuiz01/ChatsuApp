@@ -34,4 +34,9 @@ export class AuthService {
   logout(): void {
     this.supabase.auth.signOut();
   }
+
+  async getCurrentUser() {
+    const { data: { user } } = await this.supabase.auth.getUser();
+    return user;
+  }
 }

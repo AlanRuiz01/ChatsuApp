@@ -9,7 +9,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="header">
-    <ion-img src="../assets/icon/logOut.svg" alt="LogOutIcon" class="headerItems" [routerLink]="['/inicio']" ></ion-img>
+    <ion-img src="../assets/icon/logOut.svg" alt="LogOutIcon" class="headerItems" (click)="onLogout()" id="pointer"></ion-img>
     <ion-img src="../assets/icon/contact.svg" alt="Contact" class="headerItems"></ion-img>
     <h1 class="headerItems">SALAS</h1>
   </div>
@@ -17,11 +17,11 @@
   <ion-list lines = "none" class="listClass">
     <ion-item *ngFor="let group of Groups" color="light">
       <ion-thumbnail slot="start" class="custom-thumbnail">
-        <img [src]="group.icon" id="icons" />
+        <img [src]="group.icon" id="icons" [routerLink]="['/chat']"/>
       </ion-thumbnail>
       <ion-label>
         <ion-text color="dark">
-        <h2 id="name">{{ group.name }}</h2>
+        <h2 id="name">{{ group.name }} </h2>
       </ion-text>
         <p id="des">{{ group.description }}</p>
       </ion-label>

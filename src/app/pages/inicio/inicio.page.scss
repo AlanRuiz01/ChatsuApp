@@ -42,12 +42,13 @@ h1{
     color: #6778C5;
     font-size: 16px;
 }
-.login{
+.loginForm{
    display: flex;
    flex-direction: column;
    align-items: center;
 }
-.input{
+ 
+.inputs{
     width: 308px;
     padding: 5px 10px;
  
@@ -61,7 +62,7 @@ h1{
     font-size: 24px;
     
 }
-.butLogin, .primeraV{
+.primeraV{
     text-align: center;
 }
 
