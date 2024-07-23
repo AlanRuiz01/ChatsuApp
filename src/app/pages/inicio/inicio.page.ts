@@ -30,6 +30,7 @@ export class InicioPage {
           this.errorMessage = this.translateError(result.error.message);
         } else {
           this.router.navigateByUrl('/chat-room');
+          this.resetForm();
         }
       });
   }
