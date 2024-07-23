@@ -9,7 +9,7 @@ export class SocketService {
   private socket: Socket;
 
   constructor() {
-    this.socket = io('http://localhost:4000');
+    this.socket = io('https://chatsu-server.onrender.com');
   }
 
   sendMessage(message: string , userName: string) {
