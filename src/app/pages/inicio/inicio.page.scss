@@ -51,13 +51,14 @@ h1{
 .inputs{
     width: 308px;
     padding: 5px 10px;
- 
+    border: 1px solid #6778C5; // posible correcion para bugs en dispotivos iphone
+    border-radius: 8px;
 }
 .butCenter{
     text-align: center;
 }
 #butL{
-    --background: #6778C5; /* Cambia este color por el que prefieras */
+    --background: #6778C5; 
     margin-top: 20px;
     color: #FFFFFF;
     font-size: 20px;

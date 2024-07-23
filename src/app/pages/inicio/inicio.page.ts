@@ -42,6 +42,9 @@ export class InicioPage {
         return 'Datos incorrectos, Por favor verifique los campos';
     }
   }
+  resetForm() {
+    this.form.reset();
+  }
 }  
 
 

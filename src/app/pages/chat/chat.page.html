@@ -5,9 +5,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-</ion-header>
-
-<ion-content>
   <div class="header">
     <ion-buttons slot="start"  >
       <ion-back-button defaultHref="/chat-room" class="CustomBackBut" text=""></ion-back-button>
@@ -15,8 +12,12 @@
     <ion-icon [src]="group?.icon" slot="start" class="headerItem"></ion-icon>  
     <h1 >{{ group?.name }}</h1>
   </div>
+  
+</ion-header>
+
+<ion-content>
+
   <ion-list>
-   
     <ion-item *ngFor="let msg of messages">
       <div class="message-container">
       <p  id="MsgChat"><strong>{{ msg.userName }}</strong> <span id="timestamp">Hoy a las: {{ msg.timestamp }}</span></p> 
