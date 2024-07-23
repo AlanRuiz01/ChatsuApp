@@ -20,6 +20,27 @@
     margin-left: 10px;
  }
  
+ #MsgChat{
+    font-family: "League Spartan", sans-serif;
+    color: #6778C5;
+ }
+
+ .message-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #timestamp {
+    margin-top: 0;
+    font-family: "League Spartan", sans-serif;
+    color: grey;
+    font-size: 0.8em; 
+  }
+
+ #message{
+    display: inline-block;
+    margin-left: 5px;
+ }
 .inputMessage{
     display: flex;
     align-items: center;

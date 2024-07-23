@@ -33,7 +33,8 @@ export class ChatPage implements OnInit {
     
   }
   sendMessage() {
-    this.socketService.sendMessage(this.message , this.userName);
+    const timestamp = new Date().toLocaleTimeString();
+    this.socketService.sendMessage(this.message , this.userName , timestamp);
     this.message = '';
   }
 }

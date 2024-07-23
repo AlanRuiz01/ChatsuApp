@@ -12,8 +12,8 @@ export class SocketService {
     this.socket = io('https://chatsu-server.onrender.com');
   }
 
-  sendMessage(message: string , userName: string) {
-    this.socket.emit('message', { message, userName });
+  sendMessage(message: string, userName: string, timestamp: string) {
+    this.socket.emit('message', { message, userName, timestamp });
   }
 
   getMessage(): Observable<string> {
