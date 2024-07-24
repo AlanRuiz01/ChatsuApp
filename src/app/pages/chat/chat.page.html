@@ -5,13 +5,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-  <div class="header">
-    <ion-buttons slot="start"  >
-      <ion-back-button defaultHref="/chat-room" class="CustomBackBut" text=""></ion-back-button>
-    </ion-buttons> 
-    <ion-icon [src]="group?.icon" slot="start" class="headerItem"></ion-icon>  
-    <h1 >{{ group?.name }}</h1>
-  </div>
+<div class="header" *ngIf="group">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/chat-room" class="CustomBackBut" text=""></ion-back-button>
+  </ion-buttons> 
+  <ion-icon [src]="group?.icon ? 'assets/icon/' + group.icon : 'assets/icon/default-icon.svg'" slot="start" class="headerItem"></ion-icon>  
+  <h1>{{ group?.name }}</h1>
+</div>
   
 </ion-header>
 
@@ -20,22 +20,25 @@
   <ion-list>
     <ion-item *ngFor="let msg of messages">
       <div class="message-container">
-      <p  id="MsgChat"><strong>{{ msg.userName }}</strong> <span id="timestamp">Hoy a las: {{ msg.timestamp }}</span></p> 
-      <span id="message">{{ msg.message }} </span>
+        <p id="MsgChat"><strong>{{ msg.userName }}</strong> <span id="timestamp">Hoy a las: {{ msg.timestamp }}</span></p> 
+        <span id="message">{{ msg.message }}</span>
       </div>
     </ion-item>
   </ion-list>
+
+  
 </ion-content>
 
+ 
 <ion-footer>
     <div class="inputMessage"> 
     <ion-toolbar id="CustomToolbar"> 
     <!-- <ion-item id="customItem" fill="outline" shape="round"  > -->
       <!-- !     <ion-button (click)="sendMessage()">Send</ion-button> -->
     <!-- </ion-item> -->
-    <ion-input  [(ngModel)]="message" placeholder="Type a message..."></ion-input>
+    <ion-input [(ngModel)]="message" placeholder="Type a message..."></ion-input>
     </ion-toolbar>
-    <ion-img src="../assets/icon/send.svg" alt="LogOutIcon" (click)="sendMessage()" id="send"></ion-img>
+    <ion-img src="../assets/icon/send.svg" alt="Send Icon" (click)="sendMessage()" id="send"></ion-img>
     </div>
   
 </ion-footer>

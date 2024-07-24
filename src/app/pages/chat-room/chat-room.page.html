@@ -13,11 +13,12 @@
     <ion-img src="../assets/icon/contact.svg" alt="Contact" class="headerItems"></ion-img>
     <h1 class="headerItems">SALAS</h1>
   </div>
+ 
 
   <ion-list lines = "none" class="listClass">
-    <ion-item *ngFor="let group of Groups" color="light">
+    <ion-item *ngFor="let group of groups" color="light">
       <ion-thumbnail slot="start" class="custom-thumbnail">
-        <img [src]="group.icon" id="icons" (click)="goToChat(group)"/>
+        <img [src]="'assets/icon/' + group.icon" alt="{{ group.name }} icon" id="icons" (click)="goToChat(group)" >
       </ion-thumbnail>
       <ion-label>
         <ion-text color="dark">

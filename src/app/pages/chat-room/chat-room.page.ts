@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -8,15 +8,34 @@ import { Router } from '@angular/router';
   templateUrl: './chat-room.page.html',
   styleUrls: ['./chat-room.page.scss'],
 })
-export class ChatRoomPage  {
+export class ChatRoomPage implements OnInit {
+  groups: any[] = [];
 
   constructor(private authService: AuthService, private router: Router) { }
+
+  ngOnInit() {
+    this.loadGroups();
+  }
 
   async onLogout() {
     await this.authService.logout();
     this.router.navigate(['/inicio']); // Navega a la página de login después de cerrar sesión
   }
-  
+
+  async loadGroups() {
+    const { data, error } = await this.authService.getGroups();
+    if (error) {
+      console.error('Error fetching groups:', error);
+    } else {
+      this.groups = data;
+    }
+  }
+
+  goToChat(group: any) {
+    this.router.navigate(['/chat'], { queryParams: { groupId: group.id } });
+  }
+  // Anteriormente se obtenia los grupos a traves de este JSON
+  /*
   Groups = [
     {
       name: "Videojuegos",
@@ -48,5 +67,5 @@ export class ChatRoomPage  {
   goToChat(group: any) {
     this.router.navigate(['/chat'], { queryParams: { group: JSON.stringify(group) } });
   }
-
+*/
 }

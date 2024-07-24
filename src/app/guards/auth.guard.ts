@@ -11,16 +11,21 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   async canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Promise<boolean | UrlTree> {
-
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Promise<boolean> {
     const userProfile = await this.authService.getCurrentUser();
-    if (userProfile && userProfile.username !== 'Unknown User') {
-      // Usuario autenticado, permite el acceso
-      return true;
+
+    if (userProfile) {
+      if (userProfile.username !== 'Unknown User') {
+        return true;
+      } else {
+        this.router.navigate(['/login']);
+        return false;
+      }
     } else {
-      // Usuario no autenticado, redirige al inicio
-      return this.router.createUrlTree(['/inicio']);
+      this.router.navigate(['/login']);
+      return false;
     }
   }
 }
