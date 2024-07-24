@@ -12,7 +12,7 @@ export class SocketService {
   public messages$ = this.messagesSubject.asObservable();
 
   constructor(private authService: AuthService) {
-    this.socket = io('http://localhost:4000');
+    this.socket = io('https://chatsu-server.onrender.com/');
 
     this.socket.on('connect', () => {
       console.log('Socket connected:', this.socket.id);
