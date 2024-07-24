@@ -12,7 +12,7 @@ export class SocketService {
   public messages$ = this.messagesSubject.asObservable();
 
   constructor(private authService: AuthService) {
-    this.socket = io('https://chatsu-server.onrender.com/');
+    this.socket = io('https://chatsu-server.onrender.com');
 
     this.socket.on('message', (message) => {
       console.log('Message received:', message);
@@ -26,8 +26,9 @@ export class SocketService {
       const userId = user.id;
       const userName = user.username;
       if (userId) {
+        const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         await this.authService.saveMessage(message, userId, groupId); // Guardar en Supabase
-        this.socket.emit('sendMessage', { message, userName, groupId });
+        this.socket.emit('sendMessage', { message, userName, timestamp, groupId });
       } else {
       }
     }
