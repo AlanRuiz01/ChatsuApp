@@ -14,10 +14,6 @@ export class SocketService {
   constructor(private authService: AuthService) {
     this.socket = io('https://chatsu-server.onrender.com/');
 
-    this.socket.on('connect', () => {
-      console.log('Socket connected:', this.socket.id);
-    });
-
     this.socket.on('message', (message) => {
       console.log('Message received:', message);
       this.messagesSubject.next([...this.messagesSubject.getValue(), message]);
