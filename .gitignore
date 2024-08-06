@@ -11,7 +11,9 @@ $RECYCLE.BIN/
 
 *.log
 log.txt
-/environments
+/src/environments/
+.environments
+
 
 /.sourcemaps
 /.versions
